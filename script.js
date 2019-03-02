@@ -10,6 +10,8 @@ let answerSubmitted;
 let answerCorrect;
 let itemKeys = [];
 let itemKeyQuestions;
+let score;
+let question;
 request.open(
   "GET",
   "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/item.json ",
@@ -74,11 +76,13 @@ function checkQuestionIsValid() {
 }
 
 function showResult() {
+  question++;
   let name = items[itemKeyQuestions[answerCorrect]].name;
   let gold = items[itemKeyQuestions[answerCorrect]].gold.total;
   $("div.result").show();
 
   if (answerIsCorrect) {
+    score++;
     $("#question").text(
       `Correct! ${name} has the highest value at ${gold} total cost.`
     );
@@ -87,6 +91,8 @@ function showResult() {
       `Not Correct. ${name} has the highest value at ${gold} total cost.`
     );
   }
+
+  document.getElementById("score").textContent = `Score: ${score}/${question}`;
 
   $("label.a1").html(
     items[itemKeyQuestions[0]].name +
@@ -186,7 +192,8 @@ function shuffle(array) {
 request.onload = function() {
   parse = JSON.parse(this.response);
   items = parse.data;
-
+  score = 0;
+  question = 0;
   //console.log(Object.keys(items));
 
   Object.keys(items).forEach(key => {
