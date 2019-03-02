@@ -86,10 +86,13 @@ function showResult() {
     $("#question").text(
       `Correct! ${name} has the highest value at ${gold} total cost.`
     );
+
+    $("#question").addClass("correct");
   } else {
     $("#question").text(
       `Not Correct. ${name} has the highest value at ${gold} total cost.`
     );
+    $("#question").addClass("incorrect");
   }
 
   document.getElementById("score").textContent = `Score: ${score}/${question}`;
@@ -126,6 +129,8 @@ function resetQuestion() {
   $('input[type="radio"]').show();
   $("#submit").show();
   $("#question").text(questionStr);
+  $("#question").removeClass("correct incorrect");
+  //$("#question").removeClass("incorrect");
   updateQuestions();
 }
 

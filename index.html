@@ -7,36 +7,90 @@
       crossorigin="anonymous"
     ></script>
     <script src="script.js"></script>
+
+    <style>
+      .form {
+        display: grid;
+      }
+
+      .header {
+        background-color: #bbc;
+      }
+
+      .header > h1 {
+        padding-left: 20px;
+      }
+
+      .question {
+        background-color: #dde;
+      }
+
+      .question > h3 {
+        padding-left: 20px;
+      }
+
+      .footer {
+        background-color: #bbc;
+        padding-left: 0;
+      }
+
+      img {
+        padding-left: 20px;
+      }
+
+      #score {
+        padding-left: 20px;
+      }
+
+      .button {
+        margin: 20px;
+      }
+
+      .correct {
+        color: #383;
+      }
+
+      .incorrect {
+        color: #833;
+      }
+    </style>
   </head>
   <body>
-    <h1>League Quiz</h1>
-    <div class="question">
-      <h3 id="question"></h3>
-      <form>
-        <img class="a1" />
-        <label for="a1" class="a1">Answer 1</label>
-        <input type="radio" name="answer" id="a1" data="0" /><br />
+    <div class="form">
+      <div class="header">
+        <h1>League Quiz</h1>
+      </div>
+      <div class="question">
+        <h3 id="question"></h3>
+        <form>
+          <img class="a1" />
+          <label for="a1" class="a1">Answer 1</label>
+          <input type="radio" name="answer" id="a1" data="0" /><br />
 
-        <img class="a2" />
-        <label for="a2" class="a2">Answer 2</label>
-        <input type="radio" name="answer" id="a2" data="1" /><br />
+          <img class="a2" />
+          <label for="a2" class="a2">Answer 2</label>
+          <input type="radio" name="answer" id="a2" data="1" /><br />
 
-        <img class="a3" />
-        <label for="a3" class="a3">Answer 3</label>
-        <input type="radio" name="answer" id="a3" data="2" /><br />
+          <img class="a3" />
+          <label for="a3" class="a3">Answer 3</label>
+          <input type="radio" name="answer" id="a3" data="2" /><br />
 
-        <img class="a4" />
-        <label for="a4" class="a4">Answer 4</label>
-        <input type="radio" name="answer" id="a4" data="3" /><br /><br />
-        <input type="button" id="submit" class="button" value="Submit" />
-      </form>
+          <img class="a4" />
+          <label for="a4" class="a4">Answer 4</label>
+          <input type="radio" name="answer" id="a4" data="3" /><br /><br />
+          <input type="button" id="submit" class="button" value="Submit" />
+        </form>
+
+        <div class="result">
+          <input type="button" id="next" class="button" value="Go Next" />
+        </div>
+      </div>
+
+      <div class="footer">
+        <!--<input type="button" id="log" class="button" value="Log Items Parse" />-->
+
+        <h3 id="score">Score: 0/0</h3>
+      </div>
     </div>
-    <div class="result">
-      <input type="button" id="next" class="button" value="Go Next" />
-    </div>
-    <br />
-    <input type="button" id="log" class="button" value="Log Items Parse" />
-
-    <h3 id="score">Score: 0/0</h3>
   </body>
 </html>
