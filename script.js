@@ -1,5 +1,5 @@
 let request = new XMLHttpRequest();
-let itemImagePath = "http://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/";
+let itemImagePath = "https://ddragon.leagueoflegends.com/cdn/6.24.1/img/item/";
 const questionStr = "Select the most expensive item (total gold cost)";
 let parse;
 let items;
@@ -14,7 +14,7 @@ let score;
 let question;
 request.open(
   "GET",
-  "http://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/item.json ",
+  "https://ddragon.leagueoflegends.com/cdn/6.24.1/data/en_US/item.json ",
   true
 );
 
@@ -214,6 +214,8 @@ request.onload = function() {
   //});
 
   updateQuestions();
+
+  console.log(itemImagePath);
 };
 
 $(document).ready(function() {
